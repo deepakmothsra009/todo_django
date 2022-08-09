@@ -5,14 +5,18 @@ from rest_framework import status, viewsets
 from rest_framework.decorators import action
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
-from .serializers import NullSerializer, UserSerializer, LoginSerializer, SignupSerializer
 
 # Create your views here.
+from .serializers import NullSerializer, UserSerializer, LoginSerializer, SignupSerializer
 
 
 class AuthViewSet(viewsets.ModelViewSet):
     """
         Viewset to login/signup/list the User object.
+        **Context**
+        :class:`django.contrib.auth.models.User` .
+
+        **Permission** : AllowAny
     """
     permission_classes = (AllowAny,)
 
@@ -57,6 +61,9 @@ class AuthViewSet(viewsets.ModelViewSet):
 
     @action(methods=['GET', ], detail=False, name='logout', permission_classes=[IsAuthenticated, ])
     def logout(self, request):
+        """
+            Calls Django logout method.
+        """
         logout(request)
         return Response("successfully logged out", status=status.HTTP_200_OK)
 

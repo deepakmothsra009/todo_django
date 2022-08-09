@@ -41,7 +41,7 @@ function App() {
           </div>
           <div style={{margin: "1em", color: "red", align: "center"}}>{message}</div>
           <button type="submit" className="btn btn-primary" onClick={tryLogin}>Login</button>
-          <button type="submit" className="btn btn-secondary" onClick={routeChange}>SignUp</button>
+          <button type="submit" className="btn btn-info" onClick={routeChange}>Sign-up</button>
         </form>
       </div>
   );

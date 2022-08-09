@@ -159,7 +159,7 @@ function App() {
 				padding: "1em"}} className="shadow">
 				<div style={{display: "flex", flexDirection: "row"}}>
 					<span>ToDo Tasks App</span>
-					<a className="btn btn-light" style={{marginLeft: "auto"}} onClick={logout}>Logout</a>
+					<a className="btn btn-info" style={{marginLeft: "auto"}} onClick={logout}>Logout</a>
 				</div>
 			</div>
 			<div style={{maxWidth: "800px", margin: "auto", marginTop: "1em", marginBottom: "1em",

@@ -1,0 +1,7 @@
+POSTGRES_PASSWORD="abc123"
+POSTGRES_DB="todo_db"
+POSTGRES_PORT="5432"
+POSTGRES_USER="deepak"
+POSTGRES_DB_HOST="postgres"
+DEBUG=True
+PGDATA="/var/lib/postgresql/data"

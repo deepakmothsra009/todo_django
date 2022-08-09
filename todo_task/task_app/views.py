@@ -3,6 +3,7 @@ from rest_framework import status, viewsets
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 
+# Create your views here.
 from auth_app.authentication import UserTokenAuthentication
 from .models import Task
 from .pagination import CustomPageNumberPagination
@@ -18,7 +19,7 @@ class TaskViewSet(viewsets.ModelViewSet):
     """
         Viewset to create/update/list the Task object.
         **Context**
-        :class:`tasks.models.`Task` .
+        :class:`task_app.models.`Task` .
 
         **Permission** : IsAuthenticated
 
@@ -84,3 +85,4 @@ class TaskViewSet(viewsets.ModelViewSet):
         paginated_queryset = self.paginate_queryset(serializer.data)
         paginated_response = self.get_paginated_response(paginated_queryset)
         return Response(paginated_response.data, status=status.HTTP_200_OK)
+        # return Response(serializer.data, status=status.HTTP_200_OK)
